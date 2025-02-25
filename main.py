@@ -249,12 +249,12 @@ for i in range(len(bounding_boxes)):
 tables = []
 for box in bounding_boxes:
     x, y, w, h = box[0]
-    ratio = enhance_img.shape[0] / 500
+    ratio = rotated_enhanced_img.shape[0] / 500
     x = int(x * ratio)
     y = int(y * ratio)
     w = int(w * ratio)
     h = int(h * ratio)
-    tables.append(enhance_img[y : y + h, x : x + w])
+    tables.append(rotated_enhanced_img[y : y + h, x : x + w])
 
 # resize the tables
 resized_tables = []
